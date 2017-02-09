@@ -1,0 +1,8 @@
+html, body {
+	@include default-font;
+}
+
+.wrapper {
+  @include outer-container(1200px);
+  @include pad();
+}
