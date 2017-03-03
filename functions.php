@@ -9,7 +9,7 @@
 function my_add_theme_scripts() {
 
     // stylesheets for compiling sass on the server at runtime
-    wp_enqueue_style( 'style', get_template_directory_uri().'/sass/style.php?p=style.scss' );
+    wp_enqueue_style( 'style', get_template_directory_uri().'/css/style.css' );
 
     // fontawesome
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome-4.6.3/css/font-awesome.min.css' );
@@ -32,7 +32,6 @@ function register_my_menus() {
     array(
       'main-menu' => __( 'Main Menu' ),
 	  'footer-menu' => __( 'Footer Menu' ),
-	  'mobile-menu' => __( 'Mobile Menu' ),
     )
   );
 
@@ -40,33 +39,4 @@ function register_my_menus() {
 add_action( 'init', 'register_my_menus' );
 
 
-/*************************************************************/
-/*  REGISTER SIDEBAR 										*/
-/***********************************************************/
 
-function arphabet_widgets_init() {
-
-  register_sidebar( array(
-    'name'          => 'Sidebar One',
-    'id'            => 'sidebar_one',
-    'before_widget' => '<div class="widget">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h2>',
-    'after_title'   => '</h2>',
-    'description'   => ''
-  ) );
-
-  register_sidebar( array(
-    'name'          => 'Sidebar Two',
-    'id'            => 'sidebar_two',
-    'before_widget' => '<div class="widget">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h2>',
-    'after_title'   => '</h2>',
-    'description'   => ''
-  ) );
-
-}
-add_action( 'widgets_init', 'arphabet_widgets_init' );
-
- ?>

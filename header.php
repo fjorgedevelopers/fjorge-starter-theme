@@ -42,9 +42,6 @@
 					<nav role="navigation" class="mainNav">
 						<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 					</nav>
-		            <nav role="navigation" class="mobileNav" aria-hidden="true">
-		            	<?php wp_nav_menu( array( 'theme_location' => 'mobile-menu' ) ); ?>
-	            	</nav>  
 				</div>
 				
 			</header>

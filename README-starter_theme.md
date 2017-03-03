@@ -50,15 +50,13 @@ ____________________________________________________________
 
 The stylesheets are set up to be compiled with sass. Style.scss includes a reset (normalize.css) which you can swap for another one if you have a different reset you prefer. There are a few basic sass variables and mixins in mixins.scss which you can use/modify/delete but they are there as a start. Mobile.scss is also compiled by sass.
 
-Sass files are compiled at runtime on the server using SCSS Compiler by Leaf Corcoran. More info at http://leafo.net/scssphp/.
+There's a gulp file setup to compile sass files.  In terminal, run "gulp" and styles will compile to css/style.css.  You may need to do "npm install gulp gulp-sass" the first time to install gulp locally in your project.
 
 ____________________________________________________________
 
 
-3. SASS AND FUNCTIONS SNIPPETS
-There are some sass snippets in mixins.scss which you can use or ignore/delete. Though you can add mixins and variables directly to a stylesheet, by putting them in mixins.scss, you can then import that into both style.scss and mobile.scss and have access to them everywhere.
-
-There are also some common functions in functions-library.php which you can copy into functions.php if you need them.
+3. BOURBON AND NEAT
+Bourbon and Neat (v2.0) are installed in this theme (/sass/libraries).  See the documentation for how to use.  
 
 
 ____________________________________________________________
