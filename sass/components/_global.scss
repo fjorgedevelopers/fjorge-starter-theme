@@ -5,3 +5,10 @@ html, body {
 .wrapper {
 
 }
+
+// disable tel links on desktop
+a[href^="tel:"] {
+	@media (min-width: $tablet) {
+		pointer-events: none;
+	}
+}
