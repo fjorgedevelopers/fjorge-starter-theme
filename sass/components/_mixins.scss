@@ -1,11 +1,36 @@
 
+// set the default font-sizes on things like body, h1, h2, etc in _global.scss so you don't have to override everytime you use the font mixins
 @mixin default-font {
   font-family: Arial;
-  color: $black;
-  font-size: 16px;
   font-weight: normal;
+  color: $black;
 }
 
+@mixin headline-font {
+  font-family: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+  font-weight: 700;
+  color: $white;
+}
+
+@mixin input-placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // clear placeholder on focus
+  &:focus::-webkit-input-placeholder { color:transparent; }
+  &:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+  &:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+  &:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+}
 
 @mixin clearfix { // just put @include clearfix on a selector and it'll handle the :after part for you!
 	&:after {
