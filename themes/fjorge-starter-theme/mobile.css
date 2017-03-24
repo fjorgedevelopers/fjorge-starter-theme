@@ -1,0 +1,12 @@
+/*************************************************************/
+/*  	VARIABLES and MIXINS								 */
+/*************************************************************/
+/* tablet size */
+/* mobile size */
+@media (max-width: 767px) {
+  .half, .third, .two-thirds, .three-fourths, .fourth {
+    width: 100%; } }
+
+/* extra small mobile  */
+
+/*# sourceMappingURL=sass/maps/mobile.css.map */

@@ -1,0 +1,13 @@
+/* compiled by scssphp v0.0.12 on Thu, 16 Feb 2017 22:37:02 +0000 (0.0155s) */
+
+/* tablet size */
+/*************************************************************/
+/*  	VARIABLES and MIXINS								 */
+/*************************************************************/
+@media (max-width: 959px) {
+  /* mobile size */ }
+
+@media (max-width: 767px) {
+  /* extra small mobile  */
+    .half, .third, .two-thirds, .three-fourths, .fourth {
+      width: 100%; } }

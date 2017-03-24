@@ -1,0 +1,85 @@
+/*************************************************************/
+/*  	VARIABLES and MIXINS								 */
+/*************************************************************/
+
+// variables
+$white: #fff;
+$black: #222;
+
+$light: 300;
+$semibold: 500;
+$bold: 700;
+
+$max-width: 1200px;
+$min-width: 300px;
+
+
+//mixins
+@mixin default-font {
+	font-family: Arial;
+	color: $black;
+	font-size: 16px;
+	font-weight: normal;
+} 
+
+@mixin h1($color) {
+	font-family: Arial;
+	color: $color;
+	font-size: 36px;
+	font-weight: $bold;
+}
+
+@mixin h2($color) {
+	font-family: Arial;
+	color: $color;
+	font-size: 24px;
+	font-weight: $semibold;
+}
+
+@mixin h3($color) {
+	font-family: Arial;
+	color: $color;
+	font-size: 20px;
+	font-weight: $semibold;
+}
+
+
+// mixins to handle prefixing:
+@mixin border-radius($rad) {
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  -o-border-radius: $rad;
+  border-radius: $rad;
+}
+
+@mixin transition($time) {
+	-webkit-transition: all $time ease;
+	-moz-transition: all $time ease;
+	-ms-transition: all $time ease;
+	-o-transition: all $time ease;
+	transition: all $time ease;
+}
+
+@mixin transform($prop) {
+	-webkit-transform: $prop;
+	-moz-transform: $prop;
+	-ms-transform: $prop;
+	-o-transform: $prop;
+	transform: $prop;
+}
+
+@mixin box-shadow($prop) {
+	-webkit-box-shadow: $prop;
+	-moz-box-shadow: $prop;
+	-ms-box-shadow: $prop;
+	-o-box-shadow: $prop;
+	box-shadow: $prop;
+}
+
+@mixin gradient($topColor, $bottomColor) {
+	background-color: -webkit-linear-gradient($topColor, $bottomColor);
+	background-color: -moz-linear-gradient($topColor, $bottomColor);
+	background-color: -ms-linear-gradient($topColor, $bottomColor);
+	background-color: -o-linear-gradient($topColor, $bottomColor);
+	background-color: linear-gradient($topColor, $bottomColor);
+}
