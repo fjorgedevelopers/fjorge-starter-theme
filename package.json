@@ -1,11 +1,14 @@
 {
   "name": "fjorge-starter-theme",
   "version": "1.0.0",
-  "description": "dependencies for bourbon-neat-gulp branch of the fjorge starter theme",
+  "description": "dependencies for bourbon-neat-gulp branch of fjorge starter theme for wordpress",
   "main": "Gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2"
   },
   "devDependencies": {},
   "scripts": {
