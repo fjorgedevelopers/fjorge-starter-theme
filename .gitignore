@@ -1,5 +1,6 @@
 # Compiled styles #
-css/style.css
+dist/css/style.css
+dist/js/main.js
 
 # The Bare Minimum #
 *.DS_Store
@@ -164,6 +165,7 @@ wp-content/blogs.dir/
 wp-content/cache/
 wp-content/upgrade/
 wp-content/plugins/hello.php
+wp-content/themes/twenty*
 
 #/.htaccess
 /license.txt
