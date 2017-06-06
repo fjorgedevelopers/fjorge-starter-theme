@@ -1,6 +1,6 @@
 # Compiled styles #
-dist/css/style.css
-dist/js/main.js
+#dist/css/style.css
+#dist/js/main.js
 
 # The Bare Minimum #
 *.DS_Store

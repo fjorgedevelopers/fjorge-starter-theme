@@ -37,7 +37,7 @@ gulp.task('production', function() {
 
 gulp.task('scripts', function() {
 return gulp.src(input_js)
-    .pipe(concat('main.js'))
+    .pipe(concat('compiled.js'))
     .pipe(gulp.dest(destination_js));
 });
 
