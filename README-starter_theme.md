@@ -1,9 +1,43 @@
-WORDPRESS THEME STARTER
+WORDPRESS STARTER THEME - the gulp version
+
 This theme starter provides a basic file structure for a custom WordPress theme.
+____________________________________________________________
+
+Overview of Directories and Files:
+dist/ - compiled assets (these get rewritten by gulp)
+fonts/ - a place to put locally hosted fonts
+node_modules/ - 
+	these are the node.js dependencies for this theme including gulp and gulp-sass, this directory is not part of the repo but is created when you setup or clone this project for the first time (by running npm install from the theme directory)
+src/ - the source files that create the compiled assets, includes sass, bourbon and neat, js
+template-parts/ - put partials that get called by wordpress templates here
+.gitignore - this is set up to work with this theme, can be edited to meet your needs
+functions-library.php - 
+	these are snippets for common WordPress functions that you can move into functions.php if you need them
+Gulpfile.js - this is what tells gulp what to do, it can be edited if need be
+package.json - this is what tells node package manager what to do when you run "npm install"
+README-starter_theme.md - hey, that's this file!
+README.md - this is where you should put documentation for the theme you create
+style.css - this is required by WordPress in order to register as a valid theme, don't use
 
 ____________________________________________________________
 
-1. ENQUEUEING SCRIPTS AND STYLESHEETS
+1. SASS COMPILING
+
+The stylesheets are set up to be compiled with sass. Style.scss includes a reset (normalize.css) which you can swap for another one if you have a different reset you prefer. There are a few basic sass variables and mixins in mixins.scss which you can use/modify/delete but they are there as a start. Mobile.scss is also compiled by sass.
+
+There's a gulp file setup to compile sass files.  In terminal, run "gulp" and styles will compile to dist/css/style.css.  You may need to run "npm install" the first time you use the theme to install gulp and other node dependencies locally in your project.
+
+
+____________________________________________________________
+
+
+2. BOURBON AND NEAT
+Bourbon and Neat (v2.0) are installed in this theme (src/sass/libraries).  See the documentation for how to use.  
+
+
+____________________________________________________________
+
+3. ENQUEUEING SCRIPTS AND STYLESHEETS
 
 If you need to add another stylesheet or script, add it to the my_add_theme_scripts() function in functions.php and don't put it in the header. This is the recommended way of adding scripts and stylesheets to WordPress to avoid conflicts between themes and plugins and it also prevents dependencies from being loaded multiple times. The my_add_theme_scripts() function is set up to preload jQuery as a dependency of main.js so you don't need to add it anywhere else.
 
@@ -43,24 +77,4 @@ PREREGISTERED SCRIPTS
 For a full list of scripts that are preregistered by WordPress read this https://developer.wordpress.org/reference/functions/wp_enqueue_script.
     
 
-____________________________________________________________
 
-
-2. SASS COMPILING
-
-The stylesheets are set up to be compiled with sass. Style.scss includes a reset (normalize.css) which you can swap for another one if you have a different reset you prefer. There are a few basic sass variables and mixins in mixins.scss which you can use/modify/delete but they are there as a start. Mobile.scss is also compiled by sass.
-
-There's a gulp file setup to compile sass files.  In terminal, run "gulp" and styles will compile to css/style.css.  You may need to do "npm install gulp gulp-sass" the first time to install gulp locally in your project.
-
-____________________________________________________________
-
-
-3. BOURBON AND NEAT
-Bourbon and Neat (v2.0) are installed in this theme (/sass/libraries).  See the documentation for how to use.  
-
-
-____________________________________________________________
-
-
-4. BEANSTALK REPOSITORY
-In the future, we will set this up as a repository on Beanstalk so you can make a branch for a personalized version of this theme starter while still being able to pull down any updates to the original.
