@@ -1,20 +1,50 @@
-# Compiled styles #
-#dist/css/style.css
-#dist/js/main.js
+### VVV Files ###
+vvv-hosts
+vvv-init.sh
+wp-cli.yml
 
-# The Bare Minimum #
-*.DS_Store
-*Thumbs.db
+
+### Sass ###
 *.sass-cache*
+.sass-cache/
+*.css.map
 
-# Dependencies #
-#/bower_components
-/node_modules
 
-# My Custom Design Files Directory #
-/designFiles
+### Gulp Starter Theme ###
+# Compiled Styles #
+# To ignore compiled styles, uncomment the following #
+# dist/css/style.css
+# dist/js/compiled.js
 
-# Packages #
+# Theme dependencies #
+# /bower_components
+node_modules
+node_modules/*
+
+
+### WordPress ###
+# wp-config.php
+# wp-content/uploads/
+# wp-content/advanced-cache.php
+# wp-content/wp-cache-config.php
+
+*.log
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/plugins/hello.php
+wp-content/themes/twenty*
+
+#/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
+
+### Zip Files and Packages ###
 # it's better to unpack these files and commit the raw source
 # git has its own built in compression methods
 *.7z
@@ -26,9 +56,13 @@
 *.tar
 *.zip
 
+
 ###### Created by https://www.gitignore.io/a ######
-# Covers OSX, WordPress, Sass caches, PHPStorm, SublimeText
+# Covers OSX, PHPStorm, SublimeText
+
 ### OSX ###
+*.DS_Store
+*Thumbs.db
 *.DS_Store
 .DS_Store?
 .AppleDouble
@@ -119,9 +153,6 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-### Sass ###
-.sass-cache/
-*.css.map
 
 ### SublimeText ###
 # cache files for sublime text
@@ -152,25 +183,3 @@ bh_unicode_properties.cache
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
 
-### WordPress ###
-*.log
-#wp-config.php
-#wp-content/uploads/
-#wp-content/advanced-cache.php
-#wp-content/wp-cache-config.php
-
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/plugins/hello.php
-wp-content/themes/twenty*
-
-#/.htaccess
-/license.txt
-/readme.html
-/sitemap.xml
-/sitemap.xml.gz
-
-###### End of https://www.gitignore.io/api/sass,phpstorm,wordpress,sublimetext ######
