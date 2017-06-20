@@ -1,0 +1,58 @@
+html, body {
+	@include default-font;
+}
+
+.wrapper {
+
+}
+
+// disable tel links on desktop
+a[href^="tel:"] {
+	@media (min-width: $tablet) {
+		pointer-events: none;
+	}
+}
+
+//this moves up the main inner content block.
+#article-move {
+	margin-top: -430px;
+}
+
+//main inner wrapp after the page title and subtitle
+.article-inner-wrapper {
+	background: white;
+}
+
+
+#page #main #content > article .field-name-field-intro {
+  padding-bottom: 1px !important;
+}
+
+@media (min-width: 1024px) {
+	#content {
+		background: #F3F5F2;
+	}
+}
+
+
+//alignment of images in the wysiwyg
+img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft { float: left; margin: 0 1em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+
+//add a slash after each parent page for the breadcrumb.
+.parent-page a, .breadcrumb a {
+	&:after {
+		content: " / ";
+	}
+}
+
+.current-page  {
+	&:after {
+		content: "";
+	}
+}

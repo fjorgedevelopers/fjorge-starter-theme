@@ -9,15 +9,14 @@
 function my_add_theme_scripts() {
 
     // stylesheets for compiling sass on the server at runtime
-    wp_enqueue_style( 'style', get_template_directory_uri().'/sass/style.php?p=style.scss' );
-    wp_enqueue_style( 'mobile', get_template_directory_uri().'/sass/style.php?p=mobile.scss' );
+    wp_enqueue_style( 'style', get_template_directory_uri().'/dist/css/style.css' );
 
     // fontawesome
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome-4.6.3/css/font-awesome.min.css' );
 
     // scripts
-    wp_register_script( 'main.js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
-    wp_enqueue_script('main.js');
+    wp_register_script( 'compiled-scripts', get_template_directory_uri() . '/dist/js/compiled.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script('compiled-scripts');
 
 }
 add_action( 'wp_enqueue_scripts', 'my_add_theme_scripts' );
