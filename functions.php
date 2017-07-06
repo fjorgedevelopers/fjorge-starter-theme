@@ -37,3 +37,32 @@ function register_my_menus() {
 
 }
 add_action( 'init', 'register_my_menus' );
+
+/*************************************************************/
+/*  REGISTER SIDEBAR                    */
+/***********************************************************/
+
+function arphabet_widgets_init() {
+
+  register_sidebar( array(
+    'name'          => 'Sidebar One',
+    'id'            => 'sidebar_one',
+    'before_widget' => '<div class="widget">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+    'description'   => ''
+  ) );
+
+  register_sidebar( array(
+    'name'          => 'Sidebar Two',
+    'id'            => 'sidebar_two',
+    'before_widget' => '<div class="widget">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+    'description'   => ''
+  ) );
+
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );
