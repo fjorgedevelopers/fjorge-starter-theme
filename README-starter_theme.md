@@ -27,17 +27,9 @@ The stylesheets are set up to be compiled with sass. Style.scss includes a reset
 
 There's a gulp file setup to compile sass files.  In terminal, run "gulp" and styles will compile to dist/css/style.css.  You may need to run "npm install" the first time you use the theme to install gulp and other node dependencies locally in your project.
 
-
 ____________________________________________________________
 
-
-2. BOURBON AND NEAT
-Bourbon and Neat (v2.0) are installed in this theme (src/sass/libraries).  See the documentation for how to use.  
-
-
-____________________________________________________________
-
-3. ENQUEUEING SCRIPTS AND STYLESHEETS
+2. ENQUEUEING SCRIPTS AND STYLESHEETS
 
 If you need to add another stylesheet or script, add it to the my_add_theme_scripts() function in functions.php and don't put it in the header. This is the recommended way of adding scripts and stylesheets to WordPress to avoid conflicts between themes and plugins and it also prevents dependencies from being loaded multiple times. The my_add_theme_scripts() function is set up to preload jQuery as a dependency of main.js so you don't need to add it anywhere else.
 

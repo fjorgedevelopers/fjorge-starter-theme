@@ -275,11 +275,18 @@ textarea {
 /* line 1, src/sass/components/_global.scss */
 html, body {
   font-family: Arial;
-  font-weight: normal;
+  font-weight: 400;
+  color: #222;
+  font-size: 16px; }
+
+/* line 6, src/sass/components/_global.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+  font-weight: 700;
   color: #222; }
 
 @media (min-width: 1024px) {
-  /* line 10, src/sass/components/_global.scss */
+  /* line 11, src/sass/components/_global.scss */
   a[href^="tel:"] {
     pointer-events: none; } }
 

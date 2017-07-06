@@ -1,17 +1,5 @@
-
-// set the default font-sizes on things like body, h1, h2, etc in _global.scss so you don't have to override everytime you use the font mixins
-@mixin default-font {
-  font-family: Arial;
-  font-weight: normal;
-  color: $black;
-}
-
-@mixin headline-font {
-  font-family: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
-  font-weight: 700;
-  color: $white;
-}
-
+// to use put "@include input-placeholder([hex code or variable for color])" on any input
+// you can add other styles to this mixin as well
 @mixin input-placeholder($color) {
   &::-webkit-input-placeholder {
     color: $color;
@@ -32,15 +20,17 @@
   &:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 
-@mixin clearfix { // just put @include clearfix on a selector and it'll handle the :after part for you!
+// just put "@include clearfix" on a container and this will handle the :after part for you
+@mixin clearfix { 
 	&:after {
 		visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;
 	}
 }
 
+// this will make all child divs stretch to the same height, for Safari/IE depends on parent container having a set height
 @mixin stretchChildren {
-  @include display(flex); // these three mixins will make children in a row the same height - look, mom, no javascript!
-  @include flex-wrap(wrap); // plus they use bourbon's flexbox mixins to handle all of the vendor prefixing - supports both current spec and the 2009 spec, need to investigate if this also covers the tweener spec for IE 10....???
-  @include align-items(stretch); // it's so easy!
+  @include display(flex); 
+  @include flex-wrap(wrap);
+  @include align-items(stretch);
 }
 
