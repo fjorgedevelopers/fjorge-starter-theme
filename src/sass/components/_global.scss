@@ -2,8 +2,8 @@ html, body {
 	@include default-font;
 }
 
-.wrapper {
-
+h1, h2, h3, h4, h5, h6 {
+	@include headline-font;
 }
 
 // disable tel links on desktop
@@ -11,4 +11,8 @@ a[href^="tel:"] {
 	@media (min-width: $tablet) {
 		pointer-events: none;
 	}
+}
+
+.wrapper {
+
 }

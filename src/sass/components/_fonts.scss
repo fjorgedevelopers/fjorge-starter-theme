@@ -1,3 +1,4 @@
+// add @font-face declarations for locally hosted fonts here
 // @font-face {
 //     font-family: '';
 //     src: url('../../../fonts/<filename>');
@@ -9,3 +10,15 @@
 //     font-style: normal;
 // }
 
+// set the default font-sizes on things like body, h1, h2, etc in _global.scss so you don't have to override everytime you use the font mixins
+@mixin default-font {
+  font-family: Arial;
+  font-weight: $normal;
+  color: $black;
+}
+
+@mixin headline-font {
+  font-family: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+  font-weight: $bold;
+  color: $black;
+}
