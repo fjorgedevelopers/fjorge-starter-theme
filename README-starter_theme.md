@@ -66,3 +66,14 @@ ____________________________________________________________
 
 4. BEANSTALK REPOSITORY
 In the future, we will set this up as a repository on Beanstalk so you can make a branch for a personalized version of this theme starter while still being able to pull down any updates to the original.
+
+
+____________________________________________________________
+
+
+5. FLEXIBLE CONTENT PAGE AND TEMPLATE PARTS
+Import the JSON file in the acf-file-to-import/ directory.  This will add the ACF fields for the flexible content template included in this theme.  
+
+Importing: To import these fields into your own site, navigate to Custom Fields > Tools > Import Field Groups > Choose File > Upload the file that you exported from the site. This should autopopulate the ACF fields with a flexible content section.
+
+Then to use the template, select "Flexible Template" from the page template dropdown menu.  Add and remove fields and layouts as needed.

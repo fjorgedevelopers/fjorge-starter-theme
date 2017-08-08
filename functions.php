@@ -12,8 +12,16 @@ function my_add_theme_scripts() {
     wp_enqueue_style( 'style', get_template_directory_uri().'/sass/style.php?p=style.scss' );
     wp_enqueue_style( 'mobile', get_template_directory_uri().'/sass/style.php?p=mobile.scss' );
 
+    //slick
+    wp_enqueue_style('slickslider', get_template_directory_uri() .'/lib/slick.css', '1.6.0', false);
+    wp_enqueue_style('slickslidertheme', get_template_directory_uri() .'/lib/slick-theme.css', '1.6.0', false);
+
     // fontawesome
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome-4.6.3/css/font-awesome.min.css' );
+
+    //slick script
+    wp_register_script('slick.js', get_template_directory_uri() .'/lib/slick.js', array('jquery'), '1.6.0');
+    wp_enqueue_script('slick.js');
 
     // scripts
     wp_register_script( 'main.js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
