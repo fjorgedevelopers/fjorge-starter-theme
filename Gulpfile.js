@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var autoprefixer = require('gulp-autoprefixer');
 
 // source files
 var input_sass_stylesheet = './src/sass/style.scss';
@@ -25,6 +26,7 @@ gulp.task('sass', function() {
             outputStyle: 'nested'
         })
         .on('error', sass.logError))
+        .pipe(autoprefixer())
         .pipe(gulp.dest(destination_sass));
 });
 
