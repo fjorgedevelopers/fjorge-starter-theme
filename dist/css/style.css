@@ -70,7 +70,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 /** Prevent the duplicate application of `bolder` by the next rule in Safari 6. */
@@ -154,7 +155,8 @@ figure {
 /** 1. Add the correct box sizing in Firefox. 2. Show the overflow in Edge and IE. */
 /* line 78, src/sass/components/_normalize.scss */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -214,7 +216,8 @@ fieldset {
 /** 1. Correct the text wrapping in Edge and IE. 2. Correct the color inheritance from `fieldset` elements in IE. 3. Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers. */
 /* line 106, src/sass/components/_normalize.scss */
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -235,7 +238,8 @@ textarea {
 /** 1. Add the correct box sizing in IE 10-. 2. Remove the padding in IE 10-. */
 /* line 112, src/sass/components/_normalize.scss */
 [type="checkbox"], [type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }

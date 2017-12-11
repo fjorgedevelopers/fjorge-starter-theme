@@ -8,8 +8,11 @@
 
 function my_add_theme_scripts() {
 
-    // stylesheets for compiling sass on the server at runtime
+    // compiled styles
     wp_enqueue_style( 'style', get_template_directory_uri().'/dist/css/style.css' );
+
+    // css hotfixes
+    wp_enqueue_style( 'hotfix', get_template_directory_uri().'/dist/css/hotfix.css' );
 
     // fontawesome
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome-4.6.3/css/font-awesome.min.css' );

@@ -27,6 +27,8 @@ The stylesheets are set up to be compiled with sass. Style.scss includes a reset
 
 There's a gulp file setup to compile sass files.  In terminal, run "gulp" and styles will compile to dist/css/style.css.  You may need to run "npm install" the first time you use the theme to install gulp and other node dependencies locally in your project.
 
+There is a hotfix.css file in dist/css/ directory that is only to be used when there is NO OTHER OPTION.
+
 ____________________________________________________________
 
 2. ENQUEUEING SCRIPTS AND STYLESHEETS
