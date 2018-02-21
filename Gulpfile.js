@@ -1,5 +1,4 @@
 // Questions? Visit our documentation: http://wjiki.fjorgedigital.com/index.php?title=Gulp
-// run gulp to compile styles to /css/style.css
 
 /****************************************
         DEPENDENCIES
@@ -48,7 +47,7 @@ var destination_js = './dist/js/';
 
 
 /****************************************
-        TASKS
+        STANDARD TASKS
 *****************************************/
 
 // COMPILE SASS :: UN-MINIFIED & MINIFIED
@@ -99,6 +98,20 @@ gulp.task('vendor-css', function() {
 });
 
 
+
+/****************************************
+    	CUSTOM PROJECT TASKS
+*****************************************/
+
+// PROJECT TASK ONE
+// gulp.task('project-task', function(){
+
+// });
+
+
+
+
+
 /****************************************
         WATCH TASK
 *****************************************/
@@ -122,8 +135,16 @@ gulp.task('watch', function () {
         });
 });
 
+
+/****************************************
+        BUILD TASK
+*****************************************/
 // COMPILES SCSS, CSS & JS, does NOT watch for file changes
 gulp.task('build', ['sass', 'scripts', 'vendor-scripts', 'vendor-css']);
 
+
+/****************************************
+        DEFAULT TASK
+*****************************************/
 // DEFAULT GULP TASK
 gulp.task('default', ['build', 'watch']);
