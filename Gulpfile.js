@@ -52,8 +52,7 @@ var destination_js = './dist/js/';
 
 // COMPILE SASS :: UN-MINIFIED & MINIFIED
 gulp.task('sass', function() {
-    return gulp
-        .src(input_sass_stylesheet)
+    return gulp.src(input_sass_stylesheet)
         .pipe(sass({
             sourceComments: 'map',
             sourceMap: 'sass',
@@ -69,16 +68,25 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(destination_sass));
 });
 
+// COMPILE & MINIFY VENDOR & MISC CSS
+gulp.task('vendor-css', function() {
+    return gulp.src(input_vendor_css)
+        .pipe(concat('vendor.min.css'))
+        .pipe(minifycss())
+        .pipe(gulp.dest(destination_sass));
+});
+
+
 // COMPILE CUSTOM JS :: UN-MINIFIED & MINIFIED
 gulp.task('scripts', function() {
-return gulp.src(input_custom_js)
-    .pipe(concat('custom.js'))
-    .pipe(gulp.dest(destination_js))
+	return gulp.src(input_custom_js)
+	    .pipe(concat('custom.js'))
+	    .pipe(gulp.dest(destination_js))
 
-    // minify for production
-    .pipe(rename('custom.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest(destination_js));
+	    // minify for production
+	    .pipe(rename('custom.min.js'))
+	    .pipe(uglify())
+	    .pipe(gulp.dest(destination_js));
 });
 
 // COMPILE & MINIFY VENDOR JS
@@ -89,13 +97,6 @@ gulp.task('vendor-scripts', function() {
         .pipe(gulp.dest(destination_js));
 });
 
-// COMPILE & MINIFY VENDOR & MISC CSS
-gulp.task('vendor-css', function() {
-    return gulp.src(input_vendor_css)
-        .pipe(concat('vendor.min.css'))
-        .pipe(minifycss())
-        .pipe(gulp.dest(destination_sass));
-});
 
 
 
@@ -105,10 +106,17 @@ gulp.task('vendor-css', function() {
 
 // PROJECT TASK ONE
 // gulp.task('project-task', function(){
-
+//	return gulp.src('')
 // });
 
 
+
+
+/****************************************
+        BUILD TASK
+*****************************************/
+// COMPILES SCSS, CSS & JS, does NOT watch for file changes
+gulp.task('build', ['sass', 'vendor-css', 'scripts', 'vendor-scripts']);
 
 
 
@@ -137,14 +145,8 @@ gulp.task('watch', function () {
 
 
 /****************************************
-        BUILD TASK
-*****************************************/
-// COMPILES SCSS, CSS & JS, does NOT watch for file changes
-gulp.task('build', ['sass', 'scripts', 'vendor-scripts', 'vendor-css']);
-
-
-/****************************************
         DEFAULT TASK
 *****************************************/
 // DEFAULT GULP TASK
 gulp.task('default', ['build', 'watch']);
+
