@@ -69,6 +69,3 @@ It's easy to load scripts only on the page you need them. For example, if you ha
 
 PREREGISTERED SCRIPTS	
 For a full list of scripts that are preregistered by WordPress read this https://developer.wordpress.org/reference/functions/wp_enqueue_script.
-    
-
-(test slack integration)
