@@ -15,6 +15,7 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var minifycss = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
+var babel = require('gulp-babel');
 
 
 /****************************************
@@ -54,14 +55,13 @@ var destination_js = './dist/js/';
 // COMPILE SASS :: UN-MINIFIED & MINIFIED
 gulp.task('sass', function() {
     return gulp.src(input_sass_stylesheet)
+    	.pipe(sourcemaps.init())
         .pipe(sass({
-            sourceComments: 'map',
-            sourceMap: 'sass',
             outputStyle: 'nested'
         })
         .on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(destination_sass))
 
         // minify for production
@@ -82,12 +82,22 @@ gulp.task('vendor-css', function() {
 // COMPILE CUSTOM JS :: UN-MINIFIED & MINIFIED
 gulp.task('scripts', function() {
 	return gulp.src(input_custom_js)
+		.pipe(sourcemaps.init())
+		.pipe(babel({presets: ['env']}))
+		.on('error', function(err) {
+			console.error('[Compilation Error]');
+			console.error(err.message + '\n');
+			console.error(err.codeFrame);
+			this.emit('end');
+		})
 	    .pipe(concat('custom.js'))
+	    
 	    .pipe(gulp.dest(destination_js))
 
 	    // minify for production
 	    .pipe(rename('custom.min.js'))
 	    .pipe(uglify())
+	    .pipe(sourcemaps.write('./'))
 	    .pipe(gulp.dest(destination_js));
 });
 
