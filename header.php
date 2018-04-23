@@ -32,7 +32,7 @@
 				</div>
 
 				<div class="search">
-					<form method="get" id="searchform" class="searchform" action="<?php bloginfo('home'); ?>/">
+					<form method="get" id="searchform" class="searchform" action="<?php bloginfo('url'); ?>/">
 						<input type="text" value="" name="s" id="s" placeholder="Search&hellip;"/>
 						<input type="hidden" name="search-type" value="normal" />
 						<input name="submit" type="submit" value="Go" />
