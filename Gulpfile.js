@@ -19,6 +19,7 @@ var autoprefixer = require('gulp-autoprefixer');
 // Browser sync require and create
 var browserSync = require('browser-sync').create();
 
+
 /****************************************
         SOURCE PATHS
 *****************************************/
@@ -102,19 +103,9 @@ gulp.task('vendor-scripts', function() {
 });
 
 
-
-
 /****************************************
-    	CUSTOM PROJECT TASKS
-*****************************************/
-
-// PROJECT TASK ONE
-// gulp.task('project-task', function(){
-//	return gulp.src('')
-// });
-
-/****************************************
-                Browser Sync
+            Browser Sync
+* https://browsersync.io/docs/gulp
 This will not reload the browser on every change
 It will just output an IP that is available to any device on the network.
 Meant for Testing PC and Devices. 
@@ -126,6 +117,20 @@ gulp.task( 'browserSync', function() {
         open: false,
     });
 });
+
+
+
+
+/****************************************
+    	CUSTOM PROJECT TASKS
+*****************************************/
+
+// PROJECT TASK ONE
+// gulp.task('project-task', function(){
+//	return gulp.src('')
+// });
+
+
 
 /****************************************
         BUILD TASK
