@@ -1,11 +1,34 @@
 <?php
-
+// When commenting code, follow this format (source: https://gist.github.com/ozh/11083650):
+      /**
+     * One line description then an empty line
+     * 
+     * Optional additional description, multiline if needed, with
+     * code examples, links, anything
+     * 
+     * Can be separated in multiple paragraphs, as long as there's
+     * a blank line before the first @tag
+     *
+     * @param  bool   $stuff      The first @param must be after a blank line, even if other @tags are used before
+     * @param  string $param_one  Descriptions in one line, at least two spaces after the $var name
+     * @param  int    $var        Other descriptions should be aligned to the rightmost description
+     * @return array              Minimum should be @param and @return tags (if applicable)
+     */
+  //
 /*************************************************************/
 /*  ENQUEUE SCRIPTS AND STYLES 								*/
 /***********************************************************/
 // for documentation and a list of scripts that are pre-registered by wordpress see https://developer.wordpress.org/reference/functions/wp_enqueue_script
 // for a quick overview read this http://www.wpbeginner.com/wp-tutorials/how-to-properly-add-javascripts-and-styles-in-wordpress
 
+   /**
+     * Add all scripts for the theme. 
+     * 
+     * for documentation and a list of scripts that are pre-registered by wordpress see https://developer.wordpress.org/reference/functions/wp_enqueue_script
+     * for a quick overview read this http://www.wpbeginner.com/wp-tutorials/how-to-properly-add-javascripts-and-styles-in-wordpress
+     * 
+     * @package Main Functions
+     */
 function my_add_theme_scripts() {
 
     // vendor styles
@@ -41,6 +64,19 @@ add_action( 'wp_enqueue_scripts', 'my_add_theme_scripts' );
 /*  REGISTER MENUS 			 								*/
 /***********************************************************/
 
+/**
+     * Register Menus 
+     * 
+     * Setup wordpress menus for use in the theme. 
+     * 
+     * Add additional menus to this function.
+     *
+     * EXAMPLE: 
+     * 
+     * 'other-menu' => __('Other Menu')
+     * 
+     *  @package Main Functions
+     */
 function register_my_menus() {
 
   register_nav_menus(

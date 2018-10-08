@@ -19,7 +19,15 @@ var autoprefixer = require('gulp-autoprefixer');
 // Browser sync require and create
 var browserSync = require('browser-sync').create();
 
-
+/*
+ Vars for jsdoc and sass doc , and php doc documentation generation
+*/
+var sassdoc = require('sassdoc');
+var jsdoc = require('gulp-jsdoc3');
+var exec = require('child_process').exec;
+var template = require('gulp-template');
+var webserver = require('gulp-webserver');
+var fs = require('file-system');
 /****************************************
         SOURCE PATHS
 *****************************************/
@@ -119,6 +127,83 @@ gulp.task( 'browserSync', function() {
 });
 
 
+/****************************************
+        Doc Generation Tasks
+*****************************************/
+//Sass documentation generator
+gulp.task('sassdoc', function (){
+    var options = {
+        dest: 'docs/sass',
+    };
+    return gulp.src(input_sass_components).pipe(sassdoc(options));
+});
+
+//JS documentation generator
+gulp.task('jsdoc', function (cb) {
+    var config = require('./src/docs/jsdoc.json');
+    gulp.src(['./src/js/*.js'], {read: false})
+        .pipe(jsdoc(config,cb));
+});
+// PHP documentation generator
+gulp.task('phpdoc', function(){
+    exec('php phpDocumentor.phar -d . -t docs/php ', function (err, stdout, stderr) {
+        console.log(stdout)
+        console.log(stderr)
+    })
+});
+// generate landing page for viewing docs
+//create name for landing page based off the name of the htme
+var name = __dirname.split("/");
+var fileContent = fs.readFileSync("./README.MD", "utf8");
+name = name[name.length - 1];
+gulp.task('doclanding', function(){
+    gulp.src('src/docs/index.html')
+		.pipe(template(
+            {
+                name: name,
+                readMe: fileContent,
+                jsLink: './js/index.html',
+                sassLink:'./sass/index.html',
+                phpLink: './php/index.html'
+        }
+        ))
+		.pipe(gulp.dest('docs'))
+});
+// serve site of documentation opens on localhost 8000
+gulp.task('docserve', function() {
+    gulp.src('./docs')
+      .pipe(webserver({
+        livereload: true,
+        fallback: 'index.html',
+        open: true,
+      }));
+  });
+
+
+
+
+//   Browser sync task for vvv
+gulp.task( 'browserSync', function() {
+    browserSync.init({
+        proxy: 'http://fjorge.local',
+        open: false,
+        injectChanges: true,
+    });
+});
+/****************************************
+        BUILD TASK
+*****************************************/
+// COMPILES SCSS, CSS & JS, does NOT watch for file changes
+gulp.task('build', ['sass', 'vendor-css', 'scripts', 'vendor-scripts']);
+
+/****************************************
+        DOC updtae and serve TASKS
+*****************************************/
+
+// Only generates docs, doesn't open server run gulp docserve to serve docs, use when docs are already served
+gulp.task('updateDocs', ['sassdoc','jsdoc', 'phpdoc']);
+// Creates documentation in DOcs folder for JS, SASS, and PHP, and then opens webserver to view docs
+gulp.task('document', ['sassdoc','jsdoc', 'phpdoc', 'doclanding', 'docserve']);
 
 
 /****************************************

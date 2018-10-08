@@ -1,12 +1,54 @@
+/// White
+/// <br><img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><rect fill="#ffffff" x="0" y="0" width="100%" height="100%"/></svg>'>
+/// @group Colors
+/// @name White
+///
+/// 
 $white: #fff;
+/// Black
+/// <br><img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><rect fill="#222222" x="0" y="0" width="100%" height="100%"/></svg>'>
+/// @group Colors
+/// @name Black
 $black: #222;
 
+/// Light Weight
+/// @group Fonts
+/// @name Light 
+///
 $light: 300;
+/// Normal Weight
+/// @group Fonts
+/// @name Normal 
+///
 $normal: 400;
+/// Semi Bold Weight
+/// @group Fonts
+/// @name Light 
+///
 $semibold: 500;
+/// Bold Weight
+/// @group Fonts
+/// @name Bold
+///
 $bold: 700;
 
+/// Mobile Screen Breakpoints
+/// @name Mobile
+/// @group BreakPoint
+///
 $mobile: 768px;
+/// Tablet Screen Breakpoints
+/// @name Tablet
+/// @group BreakPoint
+///
 $tablet: 1024px;
+/// Medium Screen Breakpoints
+/// @name Medium-Screen
+/// @group BreakPoint
+///
 $medium-screens: 1200px;
+/// Large Screen Breakpoints
+/// @name Large-Screen
+/// @group BreakPoint
+///
 $large-screens: 1400px;

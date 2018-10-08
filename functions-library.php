@@ -27,7 +27,13 @@ function add_current_nav_class($classes, $item) {
 /*  ADVANCED CUSTOM FIELDS 					 				 */
 /*************************************************************/
 
-// add options page
+/**
+ * Add ACF Options Page
+ * 
+ * Adds a global options page for adding global ACF fields 
+ * 
+ *  @package library
+ */
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();	
 }
@@ -37,14 +43,29 @@ if( function_exists('acf_add_options_page') ) {
 /*  EXCERPTS 												 */
 /*************************************************************/
 
-// change the excerpt "more" tag
+/**
+ * Change the excerpt "more" tag 
+ * 
+ * Change the label of the exerpt more tag
+ * 
+ *  @package library
+ */
 function new_excerpt_more($more) {
 	global $post;
 	return '&hellip; </br> <a class="moretag" href="'. get_permalink($post->ID) . '">Read more</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-// CUSTOM FIELD EXCERPT
+
+/**
+ * Get Excerpt from ACF Field
+ * 
+ * FUnction like default get excerpt but for custom fields
+ * 
+ * @param $fieldName Name of the ACF field
+ *  
+ * @package library
+ */
 function custom_field_excerpt($fieldName) {
 	global $post;
 	$text = get_field($fieldName);
@@ -60,7 +81,14 @@ function custom_field_excerpt($fieldName) {
 	echo $text;
 }
 
-// create a shorter/longer excerpt
+/**
+ * Modfiy Excerpt length
+ * 
+ * Modify the excerpt length by changing the 
+ * value pf $scerpt length in the function
+ * 
+ *  @package library
+ */
 function get_my_excerpt(){
 	$text = get_the_content();
 	$text = strip_shortcodes($text);
