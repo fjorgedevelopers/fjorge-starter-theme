@@ -21,7 +21,7 @@ function my_add_theme_scripts() {
     wp_enqueue_style( 'hotfix', get_template_directory_uri().$styles_hotfix, null, filemtime(get_stylesheet_directory().$styles_hotfix), false );
 
     // fontawesome
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/fonts/font-awesome-4.6.3/css/font-awesome.min.css', null, null, false );
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/fonts/fontawesome-5.6.3/css/all.min.css', null, null, false );
 
     // vendor scripts
     $scripts_vendor = '/dist/js/vendor.min.js';
