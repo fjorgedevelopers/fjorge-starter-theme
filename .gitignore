@@ -28,14 +28,14 @@ node_modules/*
 # */wp-content/wp-cache-config.php
 
 *.log
-*/wp-content/uploads/
-*/wp-content/backup-db/
-*/wp-content/backups/
-*/wp-content/blogs.dir/
-*/wp-content/cache/
-*/wp-content/upgrade/
-*/wp-content/plugins/hello.php
-*/wp-content/themes/twenty*
+wp-content/uploads/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/plugins/hello.php
+wp-content/themes/twenty*
 
 # /.htaccess
 /license.txt
