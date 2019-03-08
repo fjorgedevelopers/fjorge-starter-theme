@@ -4,6 +4,7 @@
   "description": "fjorge starter theme for wordpress using gulp to compile SCSS and JS",
   "main": "Gulpfile.js",
   "devDependencies": {
+    "better-docs": "^1.1.4",
     "browser-sync": "^2.24.7",
     "file-system": "^2.2.2",
     "gulp": "^3.9.1",
